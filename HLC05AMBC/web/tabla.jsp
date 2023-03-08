@@ -17,16 +17,9 @@
     </head>
     <body>
         <% Boolean conectado = (Boolean) session.getAttribute("conectado");
-            if (!conectado.booleanValue()) { %>
-        <form method="post" id="casa" action='index.jsp'/>
-        <script type="text/javascript">
-            function formAutoSubmit() {
-                var frm = document.getElementById("casa");
-                frm.submit();
-            }
-            window.onload = formAutoSubmit;
-        </script>
-        <% } else { %>
+            if (!conectado.booleanValue()) {
+                response.sendRedirect(request.getContextPath() + "/index.jsp");
+            } else { %>
         <header>
             <h1>Práctica HLC 5</h1>
             <form method="post" action="LogOut">
@@ -67,7 +60,7 @@
             <% }%>
         </table>
 
-        <footer><h1>Hecho por: <a href="google.com">Alberto Miguel Blázquez Caraballo</a></h1></footer>
+        <footer><h1>Hecho por: <a href="https://github.com/BlazquezCaraballoAlbertoMiguelProyectos">Alberto Miguel Blázquez Caraballo</a></h1></footer>
             <% }%>
     </body>
 </html>

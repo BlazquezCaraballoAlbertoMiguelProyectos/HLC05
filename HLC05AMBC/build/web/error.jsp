@@ -16,7 +16,7 @@
     <body>
         <h1>Error de inicio de sesión</h1>
         <button onclick="location.href = 'index.jsp';">Volver</button>
-        <footer><h1>Hecho por: <a href="google.com">Alberto Miguel Blázquez Caraballo</a></h1></footer>
+        <footer><h1>Hecho por: <a href="https://github.com/BlazquezCaraballoAlbertoMiguelProyectos">Alberto Miguel Blázquez Caraballo</a></h1></footer>
     </body>
 
 </html>
