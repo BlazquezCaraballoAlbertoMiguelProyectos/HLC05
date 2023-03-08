@@ -47,12 +47,16 @@ public class InicioSesion extends HttpServlet {
             } else {
                 HttpSession session = request.getSession();
 
-                request.setAttribute("conectado", true);
-                request.setAttribute("nombre", usuario.get(0).getNombre());
-                request.setAttribute("id", usuario.get(0).getNumero());
-                request.setAttribute("pass", usuario.get(0).getPassword());
-                request.setAttribute("foto", usuario.get(0).getFoto());
-                request.getRequestDispatcher("/principal.jsp").forward(request, response);
+                session.setAttribute("conectado", true);
+                session.setAttribute("nombre", usuario.get(0).getNombre());
+                session.setAttribute("id", usuario.get(0).getNumero());
+                session.setAttribute("pass", usuario.get(0).getPassword());
+                session.setAttribute("foto", usuario.get(0).getFoto());
+                //request.setAttribute 
+                //y
+                //request.getRequestDispatcher("/principal.jsp").forward(request, response);
+                //pueden ser usados, pero estos requests no se mantendrán entre paginas, por
+                //lo que usamos sesiones
                 response.sendRedirect(request.getContextPath() + "/principal.jsp");
             }
 

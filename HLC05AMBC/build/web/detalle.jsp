@@ -18,28 +18,21 @@
     </head>
     <body>
         <% Boolean conectado = (Boolean) session.getAttribute("conectado");
-            if (!conectado.booleanValue()) { %>
-        <form method="post" id="casa" action='index.jsp'/>
-        <script type="text/javascript">
-            function formAutoSubmit() {
-                var frm = document.getElementById("casa");
-                frm.submit();
-            }
-            window.onload = formAutoSubmit;
-        </script>
-        <% } else {%>
-        <% int id = Integer.parseInt(request.getParameter("id"));
+            if (!conectado.booleanValue()) {
+                response.sendRedirect(request.getContextPath() + "/index.jsp");
+            } else {%>
+        <% int id = Integer.parseInt("" + session.getAttribute("id"));
             Mensaje men = new MensajeDaoImplement().getMensaje(id);
             String origen = new CuentaDaoImplement().getEmail(men.getCuecodigoorigen());
         %>
         <header>
-                <h1>Práctica HLC 5</h1>
-                <form method="post" action="CerrarSesion">
-                    <input type="submit" value="Salir" />
-                </form>
-                <form method="post" action="articulo.jsp">
-                    <input type="submit" value="Atras" />
-                </form>
+            <h1>Práctica HLC 5</h1>
+            <form method="post" action="CerrarSesion">
+                <input type="submit" value="Salir" />
+            </form>
+            <form method="post" action="articulo.jsp">
+                <input type="submit" value="Atras" />
+            </form>
         </header>
         <section>
             <article id="mensaje">
@@ -54,7 +47,7 @@
                 <p><%= men.getContenido()%></p>
             </article>
         </section>
-        <footer><h1>Hecho por: <a href="google.com">Alberto Miguel Blázquez Caraballo</a></h1></footer>
+        <footer><h1>Hecho por: <a href="https://github.com/BlazquezCaraballoAlbertoMiguelProyectos">Alberto Miguel Blázquez Caraballo</a></h1></footer>
             <% }%>
     </body>
 </html>

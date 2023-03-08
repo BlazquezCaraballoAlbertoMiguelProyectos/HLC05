@@ -10,7 +10,7 @@
         <% session.setAttribute("conectado", false);%>
         <header><h1>Práctica HLC 5</h1></header>
 
-        <h2>Github: </h2>
+        <h2>Github: BlazquezCaraballoAlbertoMiguelProyectos</h2>
         <h2>Gmail: ablacar395@g.educaand.es</h2>
 
         <form method="post" action="InicioSesion">
@@ -19,6 +19,6 @@
             </br></br><input type="submit" value="Login">
         </form>
 
-        <footer><h1>Hecho por: <a href="google.com">Alberto Miguel Blázquez Caraballo</a></h1></footer>
+        <footer><h1>Hecho por: <a href="https://github.com/BlazquezCaraballoAlbertoMiguelProyectos">Alberto Miguel Blázquez Caraballo</a></h1></footer>
     </body>
 </html>

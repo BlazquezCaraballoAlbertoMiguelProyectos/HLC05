@@ -14,7 +14,7 @@
         <link rel="stylesheet" href="estilos/style.css">
     </head>
     <body>
-        <% Boolean conectado = (Boolean) request.getAttribute("conectado");
+        <% Boolean conectado = (Boolean) session.getAttribute("conectado");
             if (!conectado.booleanValue()) { 
                 response.sendRedirect(request.getContextPath() + "index.jsp");
             } else { %>
@@ -26,7 +26,7 @@
             </form>
         </header>
 
-        <% int id = Integer.parseInt(request.getAttribute("id").toString());
+        <% int id = Integer.parseInt(session.getAttribute("id").toString());
             double recargo = new CuentaDaoImplement().getRecargo(id);%>
 
         <img src="fotos/${foto}" />
@@ -37,7 +37,7 @@
             <button class="option" onclick="location.href = 'tabla.jsp';">Tabla</button>
             <button class="option" onclick="location.href = 'articulo.jsp';">Articulos</button>
         </div>
-        <footer><h1>Hecho por: <a href="google.com">Alberto Miguel Blázquez Caraballo</a></h1></footer>
+        <footer><h1>Hecho por: <a href="https://github.com/BlazquezCaraballoAlbertoMiguelProyectos">Alberto Miguel Blázquez Caraballo</a></h1></footer>
 
         <% }%>
     </body>
